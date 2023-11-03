@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.svg';
+import DownloadTitle from '../components/DownloadTitle.astro';
+const title = 'A history of everything you copy';
+const text =
+    'Clipboard allows you to track and organize everything you copy. Instantly access your clipboard on all your devices.';
+---
+
+<header>
+    <div class="container">
+        <Image src={logo} alt="logo icon" />
+        <DownloadTitle title={title} text={text} />
+    </div>
+</header>
+
+<style>
+    header {
+        padding-top: 8rem;
+        text-align: center;
+        background: url('../assets/bg-header-mobile.png');
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    img {
+        margin-inline: auto;
+        margin-bottom: 3.5rem;
+    }
+</style>

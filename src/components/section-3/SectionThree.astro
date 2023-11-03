@@ -1,0 +1,80 @@
+---
+import { Image } from 'astro:assets';
+import iconBlackList from '../../assets/icon-blacklist.svg';
+import iconText from '../../assets/icon-text.svg';
+import iconPreview from '../../assets/icon-preview.svg';
+
+import googleLogo from '../../assets/logo-google.png';
+import ibmLogo from '../../assets/logo-ibm.png';
+import microsoftLogo from '../../assets/logo-microsoft.png';
+import hpLogo from '../../assets/logo-hp.png';
+import vectorLogo from '../../assets/logo-vector-graphics.png';
+---
+
+<section class="container">
+    <h2>Supercharge your workflow</h2>
+    <p>We’ve got the tools to boost your productivity.</p>
+    <div class="flex-column">
+        <article class="flex-column">
+            <Image src={iconBlackList} alt="icon blacklist sheet" />
+            <h3>Create blacklists</h3>
+            <p>
+                Ensure sensitive information never makes its way to your
+                clipboard by excluding certain sources.
+            </p>
+        </article>
+        <article class="flex-column">
+            <Image src={iconText} alt="icon blacklist sheet" />
+            <h3>Plain text snippets</h3>
+            <p>
+                Remove unwanted formatting from copied text for a consistent
+                look.
+            </p>
+        </article>
+        <article class="flex-column">
+            <Image src={iconPreview} alt="icon blacklist sheet" />
+            <h3>Sneak preview</h3>
+            <p>
+                Quick preview of all snippets on your Clipboard for easy access.
+            </p>
+        </article>
+    </div>
+    <div class="flex-column logo-container">
+        <Image src={googleLogo} alt="google logo" />
+        <Image src={ibmLogo} alt="ibm logo" />
+        <Image src={microsoftLogo} alt="microsoft logo" />
+        <Image src={hpLogo} alt="hp logo" />
+        <Image src={vectorLogo} alt="vector logo" />
+    </div>
+</section>
+
+<style>
+    section {
+        text-align: center;
+        margin-bottom: 7rem;
+    }
+
+    h2 {
+        color: var(--dark-grayish-blue);
+        font-size: 2rem;
+    }
+
+    p {
+        color: var(--grayish-blue);
+        margin-top: 1rem;
+        margin-bottom: 4rem;
+    }
+
+    img {
+        height: 100%;
+    }
+
+    article img {
+        margin-bottom: 2.5rem;
+    }
+
+    .logo-container {
+        margin-top: 4rem;
+        gap: 3rem;
+    }
+</style>
