@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.svg';
+
+import facebook from '../assets/icon-facebook.svg';
+import twitter from '../assets/icon-twitter.svg';
+import instagram from '../assets/icon-instagram.svg';
+---
+
+<footer>
+    <div class="container">
+        <div class="grid-auto">
+            <div class="icon">
+                <Image src={logo} alt="logo icon" />
+            </div>
+            <div class="wrap-links">
+                <a href="#">FAQs</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="wrap-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Press Kit</a>
+            </div>
+            <div class="wrap-links">
+                <a href="#">Install Guide</a>
+            </div>
+            <aside>
+                <a href="#">
+                    <Image src={facebook} alt="logo network" />
+                </a>
+                <a href="#">
+                    <Image src={twitter} alt="logo network" />
+                </a>
+                <a href="#">
+                    <Image src={instagram} alt="logo network" />
+                </a>
+            </aside>
+        </div>
+    </div>
+</footer>
+
+<style>
+    footer {
+        background-color: hsl(200, 23%, 95%);
+        padding-block: 3rem;
+        text-align: center;
+    }
+
+    .grid-auto {
+        align-items: center;
+    }
+
+    .icon {
+        align-content: center;
+    }
+
+    .wrap-links {
+        display: flex;
+        flex-direction: column;
+    }
+</style>

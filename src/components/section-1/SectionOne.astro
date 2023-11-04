@@ -10,7 +10,7 @@ import imgPc from '../../assets/image-computer.png';
         can access your snippets immediately on all your devices. Our Mac and
         iOS apps will help you organize everything.
     </p>
-    <div class="flex-column">
+    <div class="wrap-content">
         <div class="wrap-img">
             <Image src={imgPc} alt="image of a computer" />
         </div>
@@ -52,6 +52,12 @@ import imgPc from '../../assets/image-computer.png';
         gap: 3rem;
     }
 
+    .wrap-content {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
     h2,
     h3 {
         color: var(--dark-grayish-blue);
@@ -69,7 +75,40 @@ import imgPc from '../../assets/image-computer.png';
         margin: 1rem 0 4rem 0;
     }
 
+    h2,
+    .main-paragraph {
+        max-width: 680px;
+        margin-inline: auto;
+    }
+
     img {
         height: 100%;
+    }
+
+    @media (min-width: 768px) {
+        .wrap-content {
+            display: flex;
+            flex-direction: row;
+            gap: 0rem;
+            align-items: center;
+            text-align: start;
+            overflow-x: visible;
+            margin-top: 10rem;
+        }
+
+        img {
+            scale: 170%;
+            transform-origin: right;
+        }
+
+        .wrap-text {
+            margin-left: 5rem;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .wrap-content {
+            margin-block: 12rem 15rem;
+        }
     }
 </style>

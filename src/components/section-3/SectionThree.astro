@@ -9,13 +9,18 @@ import ibmLogo from '../../assets/logo-ibm.png';
 import microsoftLogo from '../../assets/logo-microsoft.png';
 import hpLogo from '../../assets/logo-hp.png';
 import vectorLogo from '../../assets/logo-vector-graphics.png';
+import DownloadTitle from '../DownloadTitle.astro';
+
+const title = 'Clipboard for iOS and Mac OS';
+const text =
+    'Available for free on the App Store. Download for Mac or iOS, sync with iCloud and you’re ready to start adding to your clipboard.';
 ---
 
 <section class="container">
     <h2>Supercharge your workflow</h2>
     <p>We’ve got the tools to boost your productivity.</p>
     <div class="flex-column">
-        <article class="flex-column">
+        <article>
             <Image src={iconBlackList} alt="icon blacklist sheet" />
             <h3>Create blacklists</h3>
             <p>
@@ -23,7 +28,7 @@ import vectorLogo from '../../assets/logo-vector-graphics.png';
                 clipboard by excluding certain sources.
             </p>
         </article>
-        <article class="flex-column">
+        <article>
             <Image src={iconText} alt="icon blacklist sheet" />
             <h3>Plain text snippets</h3>
             <p>
@@ -31,7 +36,7 @@ import vectorLogo from '../../assets/logo-vector-graphics.png';
                 look.
             </p>
         </article>
-        <article class="flex-column">
+        <article>
             <Image src={iconPreview} alt="icon blacklist sheet" />
             <h3>Sneak preview</h3>
             <p>
@@ -46,6 +51,7 @@ import vectorLogo from '../../assets/logo-vector-graphics.png';
         <Image src={hpLogo} alt="hp logo" />
         <Image src={vectorLogo} alt="vector logo" />
     </div>
+    <DownloadTitle title={title} text={text} />
 </section>
 
 <style>
@@ -54,9 +60,13 @@ import vectorLogo from '../../assets/logo-vector-graphics.png';
         margin-bottom: 7rem;
     }
 
+    h3,
     h2 {
         color: var(--dark-grayish-blue);
-        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: clamp(2rem, 5vw, 2.3rem);
     }
 
     p {
@@ -69,12 +79,41 @@ import vectorLogo from '../../assets/logo-vector-graphics.png';
         height: 100%;
     }
 
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     article img {
         margin-bottom: 2.5rem;
     }
 
     .logo-container {
-        margin-top: 4rem;
+        margin-block: 4rem;
         gap: 3rem;
+    }
+
+    .logo-container img {
+        width: 120px;
+    }
+
+    @media (min-width: 768px) {
+        .flex-column {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        section > div .flex-column > * {
+            flex: 1;
+        }
+
+        .logo-container {
+            margin-block: 4rem;
+            gap: 0rem;
+            margin-bottom: 7rem;
+        }
     }
 </style>
