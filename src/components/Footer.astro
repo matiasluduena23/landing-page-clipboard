@@ -1,40 +1,29 @@
 ---
 import { Image } from 'astro:assets';
 import logo from '../assets/logo.svg';
-
-import facebook from '../assets/icon-facebook.svg';
-import twitter from '../assets/icon-twitter.svg';
-import instagram from '../assets/icon-instagram.svg';
+import SocialIcon from './SocialIcon.astro';
 ---
 
 <footer>
     <div class="container">
-        <div class="grid-auto">
+        <div class="grid">
             <div class="icon">
                 <Image src={logo} alt="logo icon" />
             </div>
-            <div class="wrap-links">
-                <a href="#">FAQs</a>
-                <a href="#">Contact Us</a>
+            <div class="links-items">
+                <div class="wrap-links">
+                    <a href="#">FAQs</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="wrap-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Press Kit</a>
+                </div>
+                <div class="wrap-links">
+                    <a href="#">Install Guide</a>
+                </div>
             </div>
-            <div class="wrap-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Press Kit</a>
-            </div>
-            <div class="wrap-links">
-                <a href="#">Install Guide</a>
-            </div>
-            <aside>
-                <a href="#">
-                    <Image src={facebook} alt="logo network" />
-                </a>
-                <a href="#">
-                    <Image src={twitter} alt="logo network" />
-                </a>
-                <a href="#">
-                    <Image src={instagram} alt="logo network" />
-                </a>
-            </aside>
+            <SocialIcon />
         </div>
     </div>
 </footer>
@@ -46,16 +35,58 @@ import instagram from '../assets/icon-instagram.svg';
         text-align: center;
     }
 
-    .grid-auto {
+    .grid {
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        gap: 2rem;
     }
 
     .icon {
-        align-content: center;
+        margin-bottom: 2rem;
+    }
+    .icon img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .icon img:hover {
+        color: var(--strong-cyan);
     }
 
     .wrap-links {
         display: flex;
         flex-direction: column;
+        gap: 2rem;
+    }
+
+    .wrap-links a {
+        color: var(--dark-grayish-blue);
+        font-weight: 700;
+        transition: color 200ms ease-in-out;
+    }
+
+    .wrap-links a:hover {
+        color: var(--strong-cyan);
+    }
+
+    @media (min-width: 768px) {
+        .grid {
+            flex-direction: row;
+            align-items: center;
+            text-align: start;
+            justify-content: space-around;
+        }
+
+        .icon,
+        aside {
+            margin: 0;
+        }
+
+        .links-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+        }
     }
 </style>
